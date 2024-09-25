@@ -17,25 +17,25 @@ def save(info, file_name):
         print(f"Error name: {type(err).__name__}\n Error:{err}\n Try again\n")
 
 
-def add_buss(info, buss):
-    info['busses'].append(buss.m1())
+def add_classic(info, song):
+    info['classic'].append(song.m1())
 
 
-def add_car(info, car):
-    info['cars'].append(car.m1())
+def add_pop(info, song):
+    info['pop'].append(song.m1())
 
 
-def add_truck(info, truck):
-    info['trucks'].append(truck.m1())
+def add_rep(info, song):
+    info['rep'].append(song.m1())
 
 
-def buss_destruction(info, name):
-    info['busses'] = [buss for buss in info['busses'] if buss['name'] != name]
+def classic_destruction(info, name):
+    info['classic'] = [buss for buss in info['classic'] if buss['name'] != name]
 
 
-def car_destruction(info, name):
-    info['cars'] = [car for car in info['cars'] if car['name'] != name]
+def pop_destruction(info, name):
+    info['pop'] = [car for car in info['pop'] if car['name'] != name]
 
 
-def truck_destruction(info, name):
-    info['trucks'] = [truck for truck in info['trucks'] if truck['name'] != name]
+def rep_destruction(info, name):
+    info['rep'] = [truck for truck in info['rep'] if truck['name'] != name]

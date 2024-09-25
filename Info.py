@@ -1,59 +1,59 @@
 class Info:
-    def __init__(self, brand, name, horsepower, year):
-        self.brand = brand
+    def __init__(self, name):
         self.name = name
-        self.horsepower = horsepower
-        self.year = year
 
     def m1(self):
         return {
-            "brand": self.brand,
             "name": self.name,
-            "horsepower": self.horsepower,
-            "year": self.year
         }
 
     def __m2__(self):
-        return f"Марка: {self.brand}\n Прозвище{self.name}\n Лошадиные силы: {self.horsepower}\n Год выпуска: {self.year}\n"
+        return f"Название: {self.name}\n"
 
 
-class Busses(Info):
-    def __init__(self, brand, name, horsepower, year, sits):
-        super().__init__(brand, name, horsepower, year)
-        self.sits = sits
-
-    def m1(self):
-        Busses.m1 = super().m1()
-        Busses.m1.update({"sits": self.sits})
-        return Busses.m1
-
-    def __m2__(self):
-        return f"Марка: {self.brand}\n Прозвище{self.name}\n Лошадиные силы: {self.horsepower}\n Год выпуска: {self.year}\n Места: {self.sits}"
-
-
-class Cars(Info):
-    def __init__(self, brand, name, horsepower, year, equipment):
-        super().__init__(brand, name, horsepower, year)
-        self.equipment = equipment
+class Classic(Info):
+    def __init__(self, name, genre):
+        super().__init__(name)
+        self.genre = genre
 
     def m1(self):
-        Cars.m1 = super().m1()
-        Cars.m1.update({"equipment": self.equipment})
-        return Cars.m1
+        Classic.m1 = super().m1()
+        Classic.m1.update({"genre": self.genre})
+        return Classic.m1
 
     def __m2__(self):
-        return f"Марка: {self.brand}\n Прозвище{self.name}\n Лошадиные силы: {self.horsepower}\n Год выпуска: {self.year}\n Комплектация: {self.equipment}"
+        return f"Название: {self.name}\n Жанр: {self.genre}\n"
 
 
-class Trucks(Info):
-    def __init__(self, brand, name, horsepower, year, load_capacity):
-        super().__init__(brand, name, horsepower, year)
-        self.load_capacity = load_capacity
+class Pop(Info):
+    def __init__(self, name, genre, long):
+        super().__init__(name)
+        self.genre = genre
+        self.long = long
 
     def m1(self):
-        Trucks.m1 = super().m1()
-        Trucks.m1.update({"equipment": self.load_capacity})
-        return Trucks.m1
+        Pop.m1 = super().m1()
+        Pop.m1.update({"genre": self.genre})
+        Pop.m1.update({"long": self.long})
+        return Pop.m1
 
     def __m2__(self):
-        return f"Марка: {self.brand}\n Прозвище{self.name}\n Лошадиные силы: {self.horsepower}\n Год выпуска: {self.year}\n Грузоподъемность: {self.load_capacity} т"
+        return f"Название: {self.name}\n Жанр: {self.genre}\n Длительность: {self.long}\n"
+
+
+class Rep(Info):
+    def __init__(self, name, genre, long, pip):
+        super().__init__(name)
+        self.genre = genre
+        self.long = long
+        self.pip = pip
+
+    def m1(self):
+        Rep.m1 = super().m1()
+        Rep.m1.update({"genre": self.genre})
+        Rep.m1.update({"long": self.long})
+        Rep.m1.update({"long": self.pip})
+        return Rep.m1
+
+    def __m2__(self):
+        return f"Название: {self.name}\n Жанр: {self.genre}\n Длительность: {self.long}\n Исполнитель:{self.pip}"
