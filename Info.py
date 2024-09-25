@@ -38,7 +38,7 @@ class Pop(Info):
         return Pop.m1
 
     def __m2__(self):
-        return f"Название: {self.name}\n Жанр: {self.genre}\n Длительность: {self.long}\n"
+        return f"Название: {self.name}\n Жанр: {self.genre}\n Длительность: {self.long} сек\n"
 
 
 class Rep(Info):
@@ -56,4 +56,4 @@ class Rep(Info):
         return Rep.m1
 
     def __m2__(self):
-        return f"Название: {self.name}\n Жанр: {self.genre}\n Длительность: {self.long}\n Исполнитель:{self.pip}"
+        return f"Название: {self.name}\n Жанр: {self.genre}\n Длительность: {self.long} сек\n Исполнитель:{self.pip}"

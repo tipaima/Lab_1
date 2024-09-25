@@ -1,7 +1,7 @@
 import xml.etree.ElementTree as ET
 
 
-def indent(elem, level=0):
+def Otstupi(elem, level=0):
     i = "\n" + level * "  "
     if len(elem):
         if not elem.text or not elem.text.strip():
@@ -9,7 +9,7 @@ def indent(elem, level=0):
         if not elem.tail or not elem.tail.strip():
             elem.tail = i
         for subelem in elem:
-            indent(subelem, level + 1)
+            Otstupi(subelem, level + 1)
         if not subelem.tail or not subelem.tail.strip():
             subelem.tail = i
     else:
