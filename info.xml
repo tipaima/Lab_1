@@ -1,0 +1,114 @@
+<?xml version='1.0' encoding='utf-8'?>
+
+<info>
+
+    <classics>
+
+        <classic>
+
+            <name>
+                ТурецкоеРондо
+            </name>
+
+            <genre>
+                Классика
+            </genre>
+
+        </classic>
+
+        <classic>
+
+            <name>
+                АвеМария
+            </name>
+
+            <genre>
+                Классика
+            </genre>
+
+        </classic>
+
+    </classics>
+
+    <pops>
+
+        <pop>
+
+             <name>
+                Асфальт
+            </name>
+
+            <genre>
+                Поп
+            </genre>
+
+            <long>
+                2:47
+            </long>
+
+        </pop>
+
+        <pop>
+
+             <name>
+                Италия
+            </name>
+
+            <genre>
+                Поп
+            </genre>
+
+            <long>
+                3:24
+            </long>
+
+        </pop>
+
+    </pops>
+
+    <reps>
+
+        <rep>
+
+            <name>
+                Привыкаю
+            </name>
+
+            <genre>
+                Рэп
+            </genre>
+
+            <long>
+                2:17
+            </long>
+
+            <pip>
+                Донк
+            </pip>
+
+        </rep>
+
+        <rep>
+
+            <name>
+                Зеркало
+            </name>
+
+            <genre>
+                Рэп
+            </genre>
+
+            <long>
+                2:30
+            </long>
+
+            <pip>
+                Баклажан
+            </pip>
+
+        </rep>
+
+    </reps>
+
+
+</info>
