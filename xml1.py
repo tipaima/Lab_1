@@ -17,7 +17,7 @@ def Otstupi(elem, level=0):
             elem.tail = i
 
 
-def save_as_xml(info, filename):
+def save(info, filename):
     root = ET.Element('info')
 
     classics = ET.SubElement(root, 'classics')
@@ -41,12 +41,10 @@ def save_as_xml(info, filename):
             branch = ET.SubElement(rep_element, key)
             branch.text = str(value)
 
-    indent(root)
+    Otstupi(root)
 
     tree = ET.ElementTree(root)
     tree.write(filename, encoding='utf-8', xml_declaration=True)
-
-    print(f"Данные успешно сохранены в файл '{filename}'")
 
 
 def load_from_xml(filename):
@@ -94,7 +92,7 @@ def add_rep(info, rep):
 def classic_destruction(info, name):
     space = []
     for classic in info['classics']:
-        if classic['name'] != name:
+        if classic['name'].lower() != name.lower():
             space.append(classic)
 
     info['classics'] = space
@@ -103,7 +101,7 @@ def classic_destruction(info, name):
 def pop_destruction(info, name):
     space = []
     for pop in info['pops']:
-        if pop['name'] != name:
+        if pop['name'].lower() != name.lower():
             space.append(pop)
 
     info['pops'] = space
@@ -112,7 +110,7 @@ def pop_destruction(info, name):
 def rep_destruction(info, name):
     space = []
     for rep in info['reps']:
-        if rep['name'] != name:
+        if rep['name'].lower() != name.lower():
             space.append(rep)
 
     info['reps'] = space

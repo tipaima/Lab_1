@@ -1,114 +1,43 @@
 <?xml version='1.0' encoding='utf-8'?>
-
 <info>
-
-    <classics>
-
-        <classic>
-
-            <name>
-                ТурецкоеРондо
-            </name>
-
-            <genre>
-                Классика
-            </genre>
-
-        </classic>
-
-        <classic>
-
-            <name>
-                АвеМария
-            </name>
-
-            <genre>
-                Классика
-            </genre>
-
-        </classic>
-
-    </classics>
-
-    <pops>
-
-        <pop>
-
-             <name>
-                Асфальт
-            </name>
-
-            <genre>
-                Поп
-            </genre>
-
-            <long>
-                167
-            </long>
-
-        </pop>
-
-        <pop>
-
-             <name>
-                Италия
-            </name>
-
-            <genre>
-                Поп
-            </genre>
-
-            <long>
-                207
-            </long>
-
-        </pop>
-
-    </pops>
-
-    <reps>
-
-        <rep>
-
-            <name>
-                Привыкаю
-            </name>
-
-            <genre>
-                Рэп
-            </genre>
-
-            <long>
-                137
-            </long>
-
-            <pip>
-                Донк
-            </pip>
-
-        </rep>
-
-        <rep>
-
-            <name>
-                Зеркало
-            </name>
-
-            <genre>
-                Рэп
-            </genre>
-
-            <long>
-                150
-            </long>
-
-            <pip>
-                Баклажан
-            </pip>
-
-        </rep>
-
-    </reps>
-
-
+  <classics>
+    <classic>
+      <name>ТурецкоеРондо</name>
+      <genre>Классика</genre>
+    </classic>
+    <classic>
+      <name>АвеМария</name>
+      <genre>Классика</genre>
+    </classic>
+    <classic>
+      <name>Бра</name>
+      <genre>Классика</genre>
+    </classic>
+  </classics>
+  <pops>
+    <pop>
+      <name>Асфальт</name>
+      <genre>Поп</genre>
+      <long>167</long>
+    </pop>
+    <pop>
+      <name>Италия</name>
+      <genre>Поп</genre>
+      <long>207</long>
+    </pop>
+  </pops>
+  <reps>
+    <rep>
+      <name>Привыкаю</name>
+      <genre>Рэп</genre>
+      <long>137</long>
+      <pip>Донк</pip>
+    </rep>
+    <rep>
+      <name>Зеркало</name>
+      <genre>Рэп</genre>
+      <long>150</long>
+      <pip>Баклажан</pip>
+    </rep>
+  </reps>
 </info>
