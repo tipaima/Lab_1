@@ -52,15 +52,21 @@ def load_from_xml(filename):
         tree = ET.parse(filename)
         root = tree.getroot()
     except FileNotFoundError:
-        return {'classics': [], 'pops': [], 'reps': []}
+        return {'classics': [], 'rocks': [], 'pops': [], 'reps': []}
 
-    info = {'classics': [], 'pops': [], 'reps': []}
+    info = {'classics': [], 'rocks': [], 'pops': [], 'reps': []}
 
     for classic in root.find('classics'):
         classic_info = {}
         for branch in classic:
             classic_info[branch.tag] = branch.text
         info['classics'].append(classic_info)
+
+    for rock in root.find('rocks'):
+        rock_info = {}
+        for branch in rock:
+            rock_info[branch.tag] = branch.text
+        info['rocks'].append(rock_info)
 
     for pop in root.find('pops'):
         pop_info = {}
@@ -81,6 +87,10 @@ def add_classic(info, classic):
     info['classics'].append(classic.m1())
 
 
+def add_rock(info, rok):
+    info['rocks'].append(rok.m1())
+
+
 def add_pop(info, pop):
     info['pops'].append(pop.m1())
 
@@ -96,6 +106,15 @@ def classic_destruction(info, name):
             space.append(classic)
 
     info['classics'] = space
+
+
+def rock_destruction(info, name):
+    space = []
+    for rock in info['rocks']:
+        if rock['name'].lower() != name.lower():
+            space.append(rock)
+
+    info['rocks'] = space
 
 
 def pop_destruction(info, name):

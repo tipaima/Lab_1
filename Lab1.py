@@ -1,6 +1,6 @@
 import json1
 import xml1
-from Info import Classic, Pop, Rep
+from Info import Classic, Rock, Pop, Rep
 
 
 class FormatError(Exception):
@@ -45,6 +45,10 @@ def print_from_file(info, file_format):
     for classic in info['classics']:
         print(f'\nName: {classic["name"]} \nGenre: {classic["genre"]}')
 
+    print('\n-----------------------------\nRock songs:')
+    for rock in info['rocks']:
+        print(f'\nName: {rock["name"]} \nGenre: {rock["genre"]}')
+
     print('\n-----------------------------\nPop songs:')
     for pop in info['pops']:
         print(f'\nName: {pop["name"]} \nGenre: {pop["genre"]} \nDuration: {pop["long"]}')
@@ -71,20 +75,20 @@ def main():
         print('\nWrong format')
         return
 
-    k = 0
-
     while True:
         print('\nChoose:'
               '\n1 - add classic song'
-              '\n2 - add pop song'
-              '\n3 - add rep song'
-              '\n4 - delete classic song'
-              '\n5 - delete pop song'
-              '\n6 - delete rep song'
-              '\n7 - show json'
-              '\n8 - show xml'
-              '\n9 - save'
-              '\n10 - exit')
+              '\n2 - add rock song'
+              '\n3 - add pop song'
+              '\n4 - add rep song'
+              '\n5 - delete classic song'
+              '\n6 - delete rock song'
+              '\n7 - delete pop song'
+              '\n8 - delete rep song'
+              '\n9 - show json'
+              '\n10 - show xml'
+              '\n11 - save'
+              '\n12 - exit')
 
         choice = input().strip() # strip удаляет ненужные пробелы
 
@@ -96,7 +100,15 @@ def main():
             classic = Classic(name, genre)
             xfile.add_classic(info, classic)
 
-        elif choice == '2':
+        if choice == '2':
+            genre_name = 'рок'
+            name = input('\nEnter song name: ')
+            genre = get_genre(genre_name)
+
+            rock = Rock(name, genre)
+            xfile.add_rock(info, rock)
+
+        elif choice == '3':
             genre_name = 'поп'
             name = input('\nEnter song name: ')
             genre = get_genre(genre_name)
@@ -105,7 +117,7 @@ def main():
             pop = Pop(name, genre, long)
             xfile.add_pop(info, pop)
 
-        elif choice == '3':
+        elif choice == '4':
             genre_name = 'рэп'
             name = input('\nEnter song name: ')
             genre = get_genre(genre_name)
@@ -115,25 +127,31 @@ def main():
             rep = Rep(name, genre, long, pip)
             xfile.add_pop(info, rep)
 
-        elif choice == '4':
+        elif choice == '5':
             name = input('\nEnter song name: ')
 
             xfile.classic_destruction(info, name)
             print('\nDestruction complete!')
 
-        elif choice == '5':
+        elif choice == '6':
+            name = input('\nEnter song name: ')
+
+            xfile.rock_destruction(info, name)
+            print('\nDestruction complete!')
+
+        elif choice == '7':
             name = input('\nEnter song name: ')
 
             xfile.pop_destruction(info, name)
             print('\nDestruction complete!')
 
-        elif choice == '6':
+        elif choice == '8':
             name = input('\nEnter song name: ')
 
             xfile.rep_destruction(info, name)
             print('\nDestruction complete!')
 
-        elif choice == '7':
+        elif choice == '9':
             try:
                 if file_format != 'json':
                     print('\nI cant do this, because you choose another format!')
@@ -142,7 +160,7 @@ def main():
             except FormatError as e:
                 print(f"Error: {e}")
 
-        elif choice == '8':
+        elif choice == '10':
             try:
                 if file_format != 'xml':
                     print('\nI cant do this, because you choose another format!')
@@ -151,14 +169,14 @@ def main():
             except FormatError as e:
                 print(f"Error: {e}")
 
-        elif choice == '9':
+        elif choice == '11':
             if json1 == xfile:
                 json1.save(info, file_name_json)
             elif xml1 == xfile:
                 xml1.save(info, file_name_xml)
             print('\nSave complete!')
 
-        elif choice == '10':
+        elif choice == '12':
             print('\nThe program is shutting down!')
             break
 

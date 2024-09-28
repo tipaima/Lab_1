@@ -6,7 +6,7 @@ def read(file_name):
         with open(file_name, 'r', encoding='utf-8') as f:
             return json.load(f)
     except FileNotFoundError:
-        return {'classics': [], 'pops': [], 'reps': []}
+        return {'classics': [], 'rock': [], 'pops': [], 'reps': []}
 
 
 def save(info, file_name):
@@ -18,6 +18,10 @@ def add_classic(info, classic):
     info['classics'].append(classic.m1())
 
 
+def add_rock(info, rock):
+    info['rocks'].append(rock.m1())
+
+
 def add_pop(info, pop):
     info['pops'].append(pop.m1())
 
@@ -27,12 +31,16 @@ def add_rep(info, rep):
 
 
 def classic_destruction(info, name):
-    info['classics'] = [buss for buss in info['classics'] if buss['name'].lower() != name.lower()]
+    info['classics'] = [classic for classic in info['classics'] if classic['name'].lower() != name.lower()]
+
+
+def rock_destruction(info, name):
+    info['rocks'] = [rock for rock in info['rocks'] if rock['name'].lower() != name.lower()]
 
 
 def pop_destruction(info, name):
-    info['pops'] = [car for car in info['pops'] if car['name'].lower() != name.lower()]
+    info['pops'] = [pop for pop in info['pops'] if pop['name'].lower() != name.lower()]
 
 
 def rep_destruction(info, name):
-    info['reps'] = [truck for truck in info['reps'] if truck['name'].lower() != name.lower()]
+    info['reps'] = [rep for rep in info['reps'] if rep['name'].lower() != name.lower()]

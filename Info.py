@@ -25,6 +25,20 @@ class Classic(Info):
         return f"Название: {self.name}\n Жанр: {self.genre}\n"
 
 
+class Rock(Info):
+    def __init__(self, name, genre):
+        super().__init__(name)
+        self.genre = genre
+
+    def m1(self):
+        Rock.m1 = super().m1()
+        Rock.m1.update({"genre": self.genre})
+        return Rock.m1
+
+    def __m2__(self):
+        return f"Название: {self.name}\n Жанр: {self.genre}\n"
+
+
 class Pop(Info):
     def __init__(self, name, genre, long):
         super().__init__(name)
